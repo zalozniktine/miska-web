@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en-us">
+<html lang="sl">
   <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>BoxedWine</title>
-    <meta name="description" content="boxedwine emulator">
-    <meta name="keywords" content="emulator,wine,windows,x86,PC,emscripten,web assembly,wasm,boxedwine">
-    <meta name="author" content="James Bryant, Kevin O'Dwyer">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+      <title>Mala šola v vrtcu - Miška v labirintu</title>
+      <meta name="description" content="Mala šola v vrtcu - Miška v labirintu">
       <link rel="stylesheet" type="text/css" href="boxedwine.css">
   </head>
   <body>
@@ -13,14 +12,14 @@
       <figure id="spinner" style="overflow: visible;">
          <div class="spinner" style="margin-top: .5em; margin-left: auto; margin-right: auto;"></div>
 	  </figure>
-      <div class="emscripten" id="status">Downloading...</div>
+      <div class="emscripten" id="status">Nalaganje...</div>
       <div class="emscripten">
           <progress value="0" max="100" id="progress"></progress>
       </div>
   </div>
-    <div>
-        <div class="emscripten">
-            <button id="startbtn" style="display: none" onclick="start()">Start</button>
+    <div id="main-view">
+        <div class="emscripten" id="controls">
+            <button id="startbtn" style="display: none" onclick="start()">Začni igro (Start)</button>
             <button id="uploadbtn" style="display: none" onclick="document.getElementById('upload').click()" >Add File(s)</button>
             <input style="display: none" id="upload" name="upload" onclick="document.getElementById('uploadbtn').click();" onchange="startWithFiles(event.target.files);"  type="file" multiple />
             <button id="downloadbtn" style="display: none" onclick="buildGetFilesModal();">Get File(s)</button>
@@ -66,7 +65,7 @@
             </div>
         </div>
     </div>
-        <script src="boxedwine-shell.js"></script>
-<script async type="text/javascript" src="boxedwine.js"></script>
+    <script src="boxedwine-shell.js"></script>
+    <script async type="text/javascript" src="boxedwine.js"></script>
   </body>
 </html>
